@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Yahya Azizou" />
+    <meta
+      name="description"
+      content="im yahya azizou this is my first project "
+    />
+    <title>text to speech porject</title>
+    <style>
+      html {
+        font-size: 20px;
+      }
+      body {
+        background-color: black;
+        color: azure;
+        text-align: justify;
+      }
+      .container {
+        align-content: center;
+      }
+      .textarea {
+        caret-color: greenyellow;
+        padding: 2em;
+        border-radius: 12px;
+        line-height: 1.5;
+        font-size: 16px;
+        transition: all 0.5s;
+        font-family: "heebo", sans-serif;
+      }
+      .textarea:hover {
+        background-color: rgb(203, 229, 240);
+        transform: scale(1.1);
+      }
+      .textarea:focus {
+        cursor: text;
+        border-color: black;
+      }
+      button {
+        color: darkblue;
+        border-color: magenta;
+        display: block;
+        margin: auto;
+        border-radius: 8px;
+        padding: 0.4em;
+        transition: all 0.3s;
+      }
+      .button:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(3px 2px magenta);
+      }
+      details {
+        transition: all 0.5s;
+        display: block;
+      }
+      .contact {
+        align-content: center;
+      }
+      .credit {
+        font-size: 16px;
+        text-align: justify;
+      }
+      mark {
+        background-color: aquamarine;
+        color: black;
+      }
+    </style>
+  </head>
+  <br />
+  <body>
+    <p class="credit"><mark>DEVELOPER : Yahya Azizou</mark></p>
+    <h1 align="center">Text To Speech</h1>
+    <p align="center">
+      this is my first project , it is a text to speech programme made by using
+      HTML and JAVASCRIPT and some CSS for a simple style.
+    </p>
+    <br />
+    <form>
+      <div class="container" align="center">
+        <textarea
+          class="textarea"
+          placeholder="enter your text here"
+        ></textarea>
+        <button class="button">Speak</button>
+      </div>
+    </form>
+    <br />
+    <details class="contact" align="center">
+      <summary>Feel free to contact me</summary>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
+        width="20px"
+      />
+      <a href="https://www.instagram.com/y4hyas/" target="_blank"
+        >My Instagram</a
+      ><br />
+    </details>
+    <script>
+      const text = document.querySelector("textarea");
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", () => {
+        const utterance = new SpeechSynthesisUtterance(text.value);
+        speechSynthesis.speak(utterance);
+      });
+    </script>
+  </body>
+</html>
